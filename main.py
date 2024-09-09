@@ -35,6 +35,7 @@ if __name__ == "__main__":
     
     
   # Forcing everything to Groq model, once we put in security, we will take this out.
+  # Or if you don't want to incur costs of OpenAI, this will always use Groq model.
   if selected_model == 'GPT 4o' or selected_model == 'GPT 4o Mini':
     selected_model = 'Groq: Meta Llama 3 70B'
 
