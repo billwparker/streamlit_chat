@@ -66,5 +66,5 @@ if __name__ == "__main__":
           with st.chat_message("assistant"):
             st.write(l['content'])
             
-        st.write(selected_model)
+      st.write(f'Using model: {selected_model})
           
