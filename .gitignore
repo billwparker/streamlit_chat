@@ -5,8 +5,6 @@ __pycache__/
 
 config.py
 
-.gitignore
-
 .streamlit/*
 secrets.toml
 
