@@ -32,6 +32,9 @@ if __name__ == "__main__":
   
   with st.chat_message("assistant"):
     st.write(initial_message)
+    
+  if selected_model == 'GPT 4o' or selected_model == 'GPT 4o Mini':
+    selected_model = 'Groq: Meta Llama 3 70B'
 
   
   prompt = st.chat_input("Ask a question")
