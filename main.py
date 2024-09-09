@@ -65,4 +65,6 @@ if __name__ == "__main__":
         elif l['role'] == 'assistant':
           with st.chat_message("assistant"):
             st.write(l['content'])
+            
+        st.write(selected_model)
           
