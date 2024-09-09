@@ -1,6 +1,10 @@
 import streamlit as st
-from groq import Groq
+from groq import Groq 
 from openai import OpenAI
+
+
+import groq as gq
+print(f'version of groq: {gq.__version__}')
 
 open_api_key = st.secrets["open_api_key"]
 groq_key = st.secrets["groq_key"]
