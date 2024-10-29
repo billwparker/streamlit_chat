@@ -1,7 +1,7 @@
 import openai
 import streamlit as st
 
-from models import openai_chat, groq_chat
+from models import openai_chat, groq_chat, mistral_chat, gemeni_chat
 
 def get_default_model():
   
@@ -21,7 +21,7 @@ if __name__ == "__main__":
   
   st.title('Chatbot')
   
-  models = ['GPT 4o', 'GPT 4o Mini', 'Groq: Meta Llama 3 70B']
+  models = ['GPT 4o', 'GPT 4o Mini', 'Groq: Meta Llama 3 70B', 'Mistral 7B', 'Google Gemeni Flash']
   
   model_index = models.index(st.session_state.model)
   
@@ -55,10 +55,18 @@ if __name__ == "__main__":
         answer = conversation = openai_chat(content, model='gpt-4o-mini')
       elif selected_model == 'Groq: Meta Llama 3 70B':
         answer = conversation = groq_chat(content, model='llama3-70b-8192')
+      elif selected_model == 'Mistral 7B':
+        answer = conversation = mistral_chat(content, model='Mistral 7B')
+      elif selected_model == 'Google Gemeni Flash':
+        answer = conversation = gemeni_chat(content, model='gemini-1.5-flash')
+
 
       st.session_state.message_list.append({"role": "assistant", "content": answer})  
+      
                   
       for l in st.session_state.message_list:
+        
+        # print(l)
                 
         if l['role'] == 'user':
           with st.chat_message("user"):
